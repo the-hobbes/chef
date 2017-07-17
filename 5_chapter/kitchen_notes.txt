@@ -1,0 +1,82 @@
+# Initialize test kitchen support:
+kitchen init --create-gemfile
+      create  .kitchen.yml
+      create  chefignore
+      create  test/integration/default
+      create  Gemfile
+      append  Gemfile
+      append  Gemfile
+You must run `bundle install' to fetch any new gems.
+
+# Then run bundle install to run Bundler to download the extra drivers needed 
+# to run the test kitchen
+bundle install
+Fetching gem metadata from https://rubygems.org/.........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies...
+Using artifactory 2.8.2
+Using mixlib-shellout 2.2.7
+Using mixlib-versioning 1.1.0
+Using thor 0.19.1
+Using net-ssh 4.1.0
+Using safe_yaml 1.0.4
+Using bundler 1.15.1
+Using mixlib-install 2.1.12
+Using net-scp 1.2.1
+Using net-ssh-gateway 1.3.0
+Using test-kitchen 1.16.0
+Using kitchen-vagrant 1.1.0
+Bundle complete! 2 Gemfile dependencies, 12 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+
+# This gives you the following directory structure
+tree
+tree -a
+.
+├── chefignore
+├── Gemfile  # Bundler uses this file to configure the gem repository and the list of gems to download
+├── Gemfile.lock  # Records all the versions of the gems Bundler downloaded for the current project, plus the versions of all dependencies. This file can be used by another Chef developer to reproduce your current gem environment using bundle install
+├── .kitchen  # Hidden directory that Test Kitchen uses to store persistent data it needs to function properly
+├── .kitchen.yml  # configures virtual environments for test kitchen
+├── README
+└── test  # Directory structure that contains tests
+    └── integration
+        └── default
+
+# An instance is an environment that includes a way to create a virtual machine
+# with an operating system and a way to deploy automation code. 
+kitchen list
+
+Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
+default-ubuntu-1404  Vagrant  ChefSolo     Busser    Ssh        <Not Created>  <None>
+default-centos-72    Vagrant  ChefSolo     Busser    Ssh        <Not Created>  <None>
+default-centos65     Vagrant  ChefSolo     Busser    Ssh        <Not Created>  <None>
+
+# To create a virtual environment on your Chef Development Workstation running
+# CentOS, use the kitchen create command, passing it a Test Kitchen instance
+# name.
+
+# AT THIS POINT, make sure VT-x is enabled in the BIOS.
+
+sudo kitchen create default-centos65
+
+# Baseboxes
+'''
+  - The kitchen-vagrant driver uses prepackaged basebox templates to accelerate the virtual machine creation process.
+  - A basebox contains a bare-bones OS installation, just enough to enable Chef to run. 
+  - Test Kitchen comes preconfigured to use baseboxes that Chef Software makes available on the Internet via VagrantCloud. 
+  - Test Kitchen downloads a basebox only once, if it is not already present on your system.
+  - Vagrant maintains the catalog of baseboxes, which you can view with the command vagrant box list.
+  - Packer can be used to create baseboxes from small configuration scripts.
+  - Once a basebox has been downloaded, the box is imported to your virtualization software (vmware in this case)
+  - verify with kitchen list
+'''
+kitchen list
+
+# Verify that a virtual machine got created in the VirtualBox Manager
+VBoxManage list runningvms
+
+# Once the virtual machine has been created and started, you can log in to the instance via the kitchen login command:
+kitchen login default-centos65
+

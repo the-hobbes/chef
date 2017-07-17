@@ -1,0 +1,141 @@
+I, [2017-07-17T13:57:48.349384 #12706]  INFO -- default-centos65: -----> Creating <default-centos65>...
+I, [2017-07-17T13:57:49.846178 #12706]  INFO -- default-centos65: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2017-07-17T13:57:50.083849 #12706]  INFO -- default-centos65: ==> default: Importing base box 'learningchef/centos65'...
+I, [2017-07-17T13:58:03.288041 #12706]  INFO -- default-centos65: [KProgress: 20%[KProgress: 40%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+I, [2017-07-17T13:58:03.436041 #12706]  INFO -- default-centos65: ==> default: Checking if box 'learningchef/centos65' is up to date...
+I, [2017-07-17T13:58:04.450951 #12706]  INFO -- default-centos65: ==> default: Setting the name of the VM: kitchen-kitchen-default-centos65_default_1500325084404_93492
+I, [2017-07-17T13:58:04.812417 #12706]  INFO -- default-centos65: ==> default: Clearing any previously set network interfaces...
+I, [2017-07-17T13:58:04.896856 #12706]  INFO -- default-centos65: ==> default: Preparing network interfaces based on configuration...
+I, [2017-07-17T13:58:04.897124 #12706]  INFO -- default-centos65:     default: Adapter 1: nat
+I, [2017-07-17T13:58:04.982967 #12706]  INFO -- default-centos65: ==> default: Forwarding ports...
+I, [2017-07-17T13:58:05.045170 #12706]  INFO -- default-centos65:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2017-07-17T13:58:05.400699 #12706]  INFO -- default-centos65: ==> default: Booting VM...
+I, [2017-07-17T13:58:05.565162 #12706]  INFO -- default-centos65: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2017-07-17T13:58:06.639296 #12706]  INFO -- default-centos65: The guest machine entered an invalid state while waiting for it
+I, [2017-07-17T13:58:06.639365 #12706]  INFO -- default-centos65: to boot. Valid states are 'starting, running'. The machine is in the
+I, [2017-07-17T13:58:06.639389 #12706]  INFO -- default-centos65: 'poweroff' state. Please verify everything is configured
+I, [2017-07-17T13:58:06.639409 #12706]  INFO -- default-centos65: properly and try again.
+I, [2017-07-17T13:58:06.639428 #12706]  INFO -- default-centos65: 
+I, [2017-07-17T13:58:06.639452 #12706]  INFO -- default-centos65: If the provider you're using has a GUI that comes with it,
+I, [2017-07-17T13:58:06.639473 #12706]  INFO -- default-centos65: it is often helpful to open that and watch the machine, since the
+I, [2017-07-17T13:58:06.639492 #12706]  INFO -- default-centos65: GUI often has more helpful error messages than Vagrant can retrieve.
+I, [2017-07-17T13:58:06.639625 #12706]  INFO -- default-centos65: For example, if you're using VirtualBox, run `vagrant up` while the
+I, [2017-07-17T13:58:06.639645 #12706]  INFO -- default-centos65: VirtualBox GUI is open.
+I, [2017-07-17T13:58:06.639668 #12706]  INFO -- default-centos65: 
+I, [2017-07-17T13:58:06.639716 #12706]  INFO -- default-centos65: The primary issue for this error is that the provider you're using
+I, [2017-07-17T13:58:06.639741 #12706]  INFO -- default-centos65: is not properly configured. This is very rarely a Vagrant issue.
+E, [2017-07-17T13:58:06.673278 #12706] ERROR -- default-centos65: Create failed on instance <default-centos65>.
+E, [2017-07-17T13:58:06.673556 #12706] ERROR -- default-centos65: ------Exception-------
+E, [2017-07-17T13:58:06.673580 #12706] ERROR -- default-centos65: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2017-07-17T13:58:06.673597 #12706] ERROR -- default-centos65: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'learningchef/centos65'...
+[KProgress: 20%[KProgress: 40%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'learningchef/centos65' is up to date...
+==> default: Setting the name of the VM: kitchen-kitchen-default-centos65_default_1500325084404_93492
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+STDERR: The guest machine entered an invalid state while waiting for it
+to boot. Valid states are 'starting, running'. The machine is in the
+'poweroff' state. Please verify everything is configured
+properly and try again.
+
+If the provider you're using has a GUI that comes with it,
+it is often helpful to open that and watch the machine, since the
+GUI often has more helpful error messages than Vagrant can retrieve.
+For example, if you're using VirtualBox, run `vagrant up` while the
+VirtualBox GUI is open.
+
+The primary issue for this error is that the provider you're using
+is not properly configured. This is very rarely a Vagrant issue.
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2017-07-17T13:58:06.673624 #12706] ERROR -- default-centos65: ----------------------
+E, [2017-07-17T13:58:06.673641 #12706] ERROR -- default-centos65: ------Backtrace-------
+E, [2017-07-17T13:58:06.673656 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/shell_out.rb:71:in `rescue in run_command'
+E, [2017-07-17T13:58:06.673671 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2017-07-17T13:58:06.673686 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:434:in `run_command'
+E, [2017-07-17T13:58:06.673700 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:381:in `run'
+E, [2017-07-17T13:58:06.673719 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:465:in `run_vagrant_up'
+E, [2017-07-17T13:58:06.673734 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:105:in `create'
+E, [2017-07-17T13:58:06.673749 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `public_send'
+E, [2017-07-17T13:58:06.673764 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `block in perform_action'
+E, [2017-07-17T13:58:06.673779 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:524:in `block in synchronize_or_call'
+E, [2017-07-17T13:58:06.673794 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:522:in `synchronize'
+E, [2017-07-17T13:58:06.673808 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:522:in `synchronize_or_call'
+E, [2017-07-17T13:58:06.673823 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-07-17T13:58:06.673837 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-07-17T13:58:06.673856 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-07-17T13:58:06.673871 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `perform_action'
+E, [2017-07-17T13:58:06.673886 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:370:in `create_action'
+E, [2017-07-17T13:58:06.673904 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-07-17T13:58:06.673920 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-07-17T13:58:06.673935 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-07-17T13:58:06.673950 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:124:in `create'
+E, [2017-07-17T13:58:06.673965 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-07-17T13:58:06.673979 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-07-17T13:58:06.673994 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-07-17T13:58:06.674012 #12706] ERROR -- default-centos65: ----End Backtrace-----
+E, [2017-07-17T13:58:06.674028 #12706] ERROR -- default-centos65: ---Nested Exception---
+E, [2017-07-17T13:58:06.674042 #12706] ERROR -- default-centos65: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2017-07-17T13:58:06.674057 #12706] ERROR -- default-centos65: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'learningchef/centos65'...
+[KProgress: 20%[KProgress: 40%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'learningchef/centos65' is up to date...
+==> default: Setting the name of the VM: kitchen-kitchen-default-centos65_default_1500325084404_93492
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+STDERR: The guest machine entered an invalid state while waiting for it
+to boot. Valid states are 'starting, running'. The machine is in the
+'poweroff' state. Please verify everything is configured
+properly and try again.
+
+If the provider you're using has a GUI that comes with it,
+it is often helpful to open that and watch the machine, since the
+GUI often has more helpful error messages than Vagrant can retrieve.
+For example, if you're using VirtualBox, run `vagrant up` while the
+VirtualBox GUI is open.
+
+The primary issue for this error is that the provider you're using
+is not properly configured. This is very rarely a Vagrant issue.
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2017-07-17T13:58:06.674071 #12706] ERROR -- default-centos65: ----------------------
+E, [2017-07-17T13:58:06.674086 #12706] ERROR -- default-centos65: ------Backtrace-------
+E, [2017-07-17T13:58:06.674100 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/shell_out.rb:71:in `rescue in run_command'
+E, [2017-07-17T13:58:06.674119 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2017-07-17T13:58:06.674134 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:434:in `run_command'
+E, [2017-07-17T13:58:06.674152 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:381:in `run'
+E, [2017-07-17T13:58:06.674167 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:465:in `run_vagrant_up'
+E, [2017-07-17T13:58:06.674182 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-vagrant-1.1.0/lib/kitchen/driver/vagrant.rb:105:in `create'
+E, [2017-07-17T13:58:06.674197 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `public_send'
+E, [2017-07-17T13:58:06.674211 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `block in perform_action'
+E, [2017-07-17T13:58:06.674226 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:524:in `block in synchronize_or_call'
+E, [2017-07-17T13:58:06.674240 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:522:in `synchronize'
+E, [2017-07-17T13:58:06.674258 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:522:in `synchronize_or_call'
+E, [2017-07-17T13:58:06.674274 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2017-07-17T13:58:06.674288 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2017-07-17T13:58:06.674303 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2017-07-17T13:58:06.674317 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:460:in `perform_action'
+E, [2017-07-17T13:58:06.674332 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:370:in `create_action'
+E, [2017-07-17T13:58:06.674346 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2017-07-17T13:58:06.674361 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2017-07-17T13:58:06.674375 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2017-07-17T13:58:06.674389 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:124:in `create'
+E, [2017-07-17T13:58:06.674407 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2017-07-17T13:58:06.674423 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2017-07-17T13:58:06.674437 #12706] ERROR -- default-centos65: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2017-07-17T13:58:06.674452 #12706] ERROR -- default-centos65: ----End Backtrace-----
