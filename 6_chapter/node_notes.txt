@@ -1,0 +1,23 @@
+Create a new sanbox env for a node by running the same init as before:
+kitchen init --create-gemfile
+bundle install
+--edit .kitchen.yml---
+kitchen create default-centos65
+
+Node == any machine (server, workstation, router, etc...) managed by Chef which
+has the Chef client installed on it.
+
+You can install the client by running the following:
+kitchen setup default-centos65
+
+You can run a recipe on the sandbox machine using the chef client, although this
+isn't how you will typically do it (we'll look at how to run recipes and cookbooks
+next lession w/chef converge). First, login to the sandbox, then create the recipe,
+then run chef client in local mode.
+
+In local mode, any data that would have been saved to a server is written to the
+local directory. The process of writing server data locally is called writeback.
+
+kitchen login default-centos65
+--make some recipe in a .rb file--
+sudo chef-client --local-mode somefile.rb
