@@ -1,0 +1,70 @@
+Overview of the contents:
+- this chapter has 2 cookbooks.
+- motd contains recipes for setting the motd as well as the color of the shell
+- webserver contains recipes for setting up an apache webserver
+
+Cookbooks
+- are a package for your recipes
+- contains any supporting components, such as archives, images, or libraries
+- Each cookbook represents the set of instructions required to configure or deploy a single unit of infrastructure such as a web server, database, or application
+
+Generate the initial directory structure for a cookbook with the following:
+chef generate cookbook motd
+cd motd
+--modify the sandbox file, .kitchen.yml--
+
+next, check for errors by running 
+kitchen list
+
+- in order to update the message of the day, we need to create a static text file called /etc/motd on the node
+- Use the chef generate file motd command to generate the directory structure required for the motd file we will be creating on the node
+chef generate file motd
+
+- edit the files/default/motd that was just created to add a message
+vim /files/default/motd
+
+- `chef cookbook generate` created a recipes/default.rb file for you. 
+- By convention, this is the default location for your Chef code. 
+- All recipe .rb files containing Chef code are expected to be in the recipes/ subdirectory of a cookbook.
+
+- next, modify the recipes/default.rb file to specify a cookbook file
+vim recipes/default.rb (see the file itself for comments explaining things)
+
+--Now, converge--
+chef converge does:
+- deploys a cookbook to a node
+- runs chef_client on the node
+- applies a run-list to put the node into a desired state
+- converge is an idempotent operation: you can run it as many time as you like and chef will pick up where it left off if it was aborted
+- Make sure you run the kitchen converge command inside the motd cookbook directory
+
+kitchen converge default-centos65
+
+- then validate stuff worked by logging into the sandbox
+kitchen login default-centos65
+
+--Anatomy of a chef run--
+1) start the chef client
+2) build the node
+3) synchronize via the run-list (the ordered decomposed list of recipes to execute on the target node)
+4) load cookbooks and components
+5) converge
+6) report
+
+- you can add template files likes so:
+chef generate template colorizer.sh
+
+- here i used the ps1 variable, a script in /etc/profile.d, and the linux PROMPT_COMMAND
+to set everyone's bash prompt. I did the following:
+* add the new recipe to .kitchen.yml
+* set the contents of the recipe in recipes/color.rb
+* generate the template file using chef generate template colorizer.sh
+* set the contents of the template in templates/colorizer.sh.erb
+* ran kitchen converge default-centos
+* verified it worked with kitchen login
+
+
+
+
+
+
