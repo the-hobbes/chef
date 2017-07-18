@@ -1,0 +1,8 @@
+The hostname of this node is <%= node['hostname'] %>
+The IP address of this node is <%= node['ipaddress'] %>
+The os on this node is <%= node['kernel']['os'] %>
+The current user of this node is <%= node['current_user'] %>
+
+Welcome to <%= node['motd-attributes']['company'] %>
+<%= node['motd-attributes']['message'] %>
+

@@ -1,0 +1,3 @@
+A rule of thumb many Chef coders find useful is that a recipe file shouldn’t be longer than a “screenful” of code—between one dozen and two lines. Anything longer gets difficult to understand at a glance because you have to scroll up or down to see all the code. When your recipe code starts getting this long, consider breaking it up into multiple recipe files, stitching them together with include_recipe statements.
+
+
