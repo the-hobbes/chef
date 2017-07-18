@@ -1,2 +1,7 @@
 ---
-last_error: Kitchen::ShellOut::ShellCommandFailed
+hostname: 127.0.0.1
+port: '2222'
+username: vagrant
+ssh_key: "/home/phelan/Repositories/chef/5_chapter/.kitchen/kitchen-vagrant/kitchen-5_chapter-default-centos65/.vagrant/machines/default/virtualbox/private_key"
+last_action: create
+last_error: 

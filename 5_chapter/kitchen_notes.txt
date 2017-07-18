@@ -45,7 +45,9 @@ tree -a
         └── default
 
 # An instance is an environment that includes a way to create a virtual machine
-# with an operating system and a way to deploy automation code. 
+# with an operating system and a way to deploy automation code. These get pulled
+# out of the .kitchen.yml file, in which your specified baseboxes get pulled from
+# urls like: URL: https://vagrantcloud.com/learningchef/centos65 
 kitchen list
 
 Instance             Driver   Provisioner  Verifier  Transport  Last Action    Last Error
@@ -59,7 +61,7 @@ default-centos65     Vagrant  ChefSolo     Busser    Ssh        <Not Created>  <
 
 # AT THIS POINT, make sure VT-x is enabled in the BIOS.
 
-sudo kitchen create default-centos65
+kitchen create default-centos65
 
 # Baseboxes
 '''
@@ -74,9 +76,17 @@ sudo kitchen create default-centos65
 '''
 kitchen list
 
+Instance          Driver   Provisioner  Verifier  Transport  Last Action  Last Error
+default-centos65  Vagrant  ChefSolo     Busser    Ssh        Created      <None>
+
 # Verify that a virtual machine got created in the VirtualBox Manager
 VBoxManage list runningvms
 
+"kitchen-5_chapter-default-centos65_default_1500338528630_92590" {4041adda-6843-4aa1-94eb-e921b3a45d6c}
+
 # Once the virtual machine has been created and started, you can log in to the instance via the kitchen login command:
 kitchen login default-centos65
+
+Last login: Tue Jul 18 00:44:38 2017 from 10.0.2.2
+Welcome to your Packer-built virtual machine.
 
