@@ -1,0 +1,30 @@
+Manage multiple nodes with chef server
+
+- The Chef server acts as a hub for configuration data.
+- stores cookbooks, the policies that are applied to nodes, and metadata that describes each registered node that is being managed by the chef-client
+- Nodes use the chef-client to ask the Chef server for configuration details, such as recipes, templates, and file distributions
+- the chef-client then does as much of the configuration work as possible on the nodes themselves (and not on the Chef server)
+- this scalable approach distributes the configuration effort throughout the organization
+- Chef Server is aware of all machines it manages, and in this way, Chef Server also acts as an inventory management system
+
+- there's one open source chef server now
+https://blog.chef.io/2014/09/08/there-is-one-chef-server-and-it-is-open-source/
+https://docs.chef.io/server_components.html
+https://downloads.chef.io/
+- Every premium feature is now available, for free, to people managing less than 25 nodes
+
+once installed on a node, verify the chef server is there:
+rpm -q chef-server-core
+
+idempotent
+- When Chef code is idempotent, it can run multiple times on the same system and the results will always be identical, without producing unintended side effects. All Chef default resources are guaranteed to be idempotent with the exception of the execute resource.
+- execute resources are generally not idempotent, because most command-line utilities can be run only once
+- following mv command will work the first time it is run, but it will fail the second time
+ /learningchef/file1.txt /file1.txt
+- test to see if your recipe is idempotent by running kitchen converge twice
+- When a recipe has no unintended side effects, there should be 0 resources updated on the second run
+
+management console
+- 192.168.33.34 tells me that i haven't installed the management console
+- https://downloads.chef.io/manage
+
